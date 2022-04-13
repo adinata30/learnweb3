@@ -581,4 +581,4 @@ export const abi =  [
       "type": "receive"
     }
   ];
-export const NFT_CONTRACT_ADDRESS = "0x4E1Ef3e28811767A378B5fc81f06DF6b616EAFa3";
+export const NFT_CONTRACT_ADDRESS = "0x8592c208c11C398c28d8A4f36E5Ae2E291695b0b";
