@@ -37,7 +37,7 @@ export default function Home() {
 
     // If user is not connected to the Rinkeby network, let them know and throw an error
     const { chainId } = await web3Provider.getNetwork();
-    if (chainId !== 4) { // 4 == rinkeby
+    if (chainId !== 4) {
       window.alert("Change the network to Rinkeby");
       throw new Error("Change network to Rinkeby");
     }
@@ -93,7 +93,7 @@ export default function Home() {
         provider
       );
       // call the numAddressesWhitelisted from the contract
-      const _numberOfWhitelisted = await whitelistContract.numWhitelisted();
+      const _numberOfWhitelisted = await whitelistContract.numAddressesWhitelisted();
       setNumberOfWhitelisted(_numberOfWhitelisted);
     } catch (err) {
       console.error(err);
@@ -117,7 +117,7 @@ export default function Home() {
       // Get the address associated to the signer which is connected to  MetaMask
       const address = await signer.getAddress();
       // call the whitelistedAddresses from the contract
-      const _joinedWhitelist = await whitelistContract.whitelistAddress(
+      const _joinedWhitelist = await whitelistContract.whitelistedAddresses(
         address
       );
       setJoinedWhitelist(_joinedWhitelist);
